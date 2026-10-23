@@ -1,8 +1,3 @@
-# Лаб.работа №32
-
-## Код 
-
-```c
 #include <stdio.h>
 #include <math.h>
 
@@ -17,8 +12,8 @@ int main() {
 
     for (x = xn; x <= xk; x += hx) {
         for (y = yn; y <= yk; y += hy) {
-            U = 4 * cos(cbrt(y)) * sin(x * fabs(pow(y, 3) - 1.4));
-            printf("%6.2lf | %5.2lf | %10.4lf\n", x, y, U);
+            U = 4 * cos(cbrt(y)) * sin(x * fabs(pow(y, 3) - 1.4));    // я понял, что cbrt(y) — куб-ий корень, fabs(...) — модуль, pow(y, 3) — возведение в степень
+            printf("%6.2lf | %5.2lf | %10.4lf\n", x, y, U);      // %6 .2 <-- сколько знаков оставить после запятой, lf -- вещественное число с плавающей точкой, тот же double
 
             if (U < min_U) {
                 min_U = U;
@@ -31,4 +26,3 @@ int main() {
     printf("Минимум: U = %.4lf при x = %.2lf, y = %.2lf\n", min_U, min_x, min_y);
     return 0;
 }
-```
